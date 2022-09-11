@@ -35,17 +35,18 @@ export const Exchanges = () => {
 				<Col span={6}>Change</Col>
 			</Row>
 			<Row>
-				{exchangesList.map((exchange, i, arr) => (
-					<Col
-						span={24}
-						key={exchange.name}
-						onClick={() => getDescription(exchange.uuid)}>
-						<Collapse key={exchange.change}>
+				<Col span={24}>
+					<Collapse accordion className='collapse-wrap'>
+						{exchangesList.map((exchange, i) => (
 							<Panel
-								key={i}
+								key={i + 1}
 								showArrow={false}
 								header={
-									<Row>
+									<Row
+										className='collapse-panel-item'
+										onClick={() =>
+											getDescription(exchange.uuid)
+										}>
 										<Col span={6}>
 											<Text>
 												<strong>
@@ -73,9 +74,9 @@ export const Exchanges = () => {
 								}>
 								{HTMLReactParser(description || "")}
 							</Panel>
-						</Collapse>
-					</Col>
-				))}
+						))}
+					</Collapse>
+				</Col>
 			</Row>
 		</>
 	);
