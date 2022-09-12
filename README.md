@@ -2,4 +2,4 @@
 
 https://cryptoapp-23d5d.web.app/
 
-## **reactjs + redux-toolkit + RTK Query**
+## **ant design + reactjs + redux-toolkit + RTK Query**
